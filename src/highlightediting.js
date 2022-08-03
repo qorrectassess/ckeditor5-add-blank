@@ -37,8 +37,8 @@ export default class HighlightEditing extends Plugin {
 			options: [
 				{
 					model: 'yellowMarkerr',
-					class: 'marker-yellow',
-					title: 'Yellow marker',
+					class: 'marker-yellowr',
+					title: 'Yellow markerr',
 					color: 'var(--ck-highlight-marker-yellow)',
 					type: 'marker'
 				},
