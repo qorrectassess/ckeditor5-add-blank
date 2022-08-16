@@ -10,12 +10,12 @@ export default class AddBlank extends Plugin {
 
 		const editor = this.editor;
 
-		editor.model.schema.extend('$text', { allowAttributes: ['fillBlankId', 'contenteditable', 'style'] });
+		editor.model.schema.extend('$text', { allowAttributes: ['fillBlankId', 'style', 'blankCkEditor'] });
 
 		editor.conversion.for('downcast').attributeToElement({
 			model: 'fillBlankId',
 			view: (attributeValue, writer) => {
-				return writer.createAttributeElement('a', { target: attributeValue, contenteditable: 'true', style: 'background-color:#e5efff;' }, { priority: 5 });
+				return writer.createAttributeElement('a', { target: attributeValue, style: 'background-color:#e5efff;', class: 'blankCkEditor' }, { priority: 5 });
 			},
 			converterPriority: 'high'
 		});
@@ -29,9 +29,10 @@ export default class AddBlank extends Plugin {
 			converterPriority: 'high'
 		},
 			{
+
 				view: {
 					name: 'a',
-					key: 'contenteditable'
+					key: 'class'
 				},
 				model: 'fillBlankId',
 				converterPriority: 'high'
